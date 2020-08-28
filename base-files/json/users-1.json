@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "name": "Ballard Steele",
+  "isActive": false,
+  "picture": "http://placehold.it/32x32",
+  "age": 29,
+  "gender": "male",
+  "company": "SPACEWAX",
+  "email": "ballardsteele@spacewax.com",
+  "phone": "+1 (892) 549-3680",
+  "address": "394 Homecrest Court, Idamay, Oklahoma, 5281"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Ballard Steele",
+    "isActive": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 29,
+    "gender": "male",
+    "company": "SPACEWAX",
+    "email": "ballardsteele@spacewax.com",
+    "phone": "+1 (892) 549-3680",
+    "address": "394 Homecrest Court, Idamay, Oklahoma, 5281"
+  },
+  {
+    "id": 2,
+    "name": "Taylor Vazquez",
+    "isActive": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 35,
+    "gender": "female",
+    "company": "SILODYNE",
+    "email": "taylorvazquez@silodyne.com",
+    "phone": "+1 (956) 558-3367",
+    "address": "907 Walker Court, Springdale, Marshall Islands, 5449"
+  }
+]

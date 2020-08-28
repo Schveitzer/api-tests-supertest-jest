@@ -1,0 +1,11 @@
+{
+  "name": "Post Auto Test",
+  "isActive": false,
+  "picture": "http://placehold.it/32x32",
+  "age": 99,
+  "gender": "male",
+  "company": "TESTCOMPANY",
+  "email": "testpostauto@testcompany.com",
+  "phone": "+1 (892) 549-3680",
+  "address": "394 Homecrest Court, Idamay, Oklahoma, 5281"
+}
