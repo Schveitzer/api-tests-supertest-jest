@@ -43,14 +43,13 @@ To view the report in the browser, run the command:
 ```bash
 $ allure serve
 ```
+![Allure report](https://i.ibb.co/yy3S6BH/screenshot-127-0-1-1-37023-2020-08-28-11-57-50.png)
 ## Lint Code
 To lint and format the code, run:
 
 ```bash
 $ yarn code:format
 ```
-
-![Allure report](https://i.ibb.co/yy3S6BH/screenshot-127-0-1-1-37023-2020-08-28-11-57-50.png)
 
 ## Base url and configurations
 The environment variables of other configurations are loaded on [EnvironmentVariables.js](https://github.com/Schveitzer/api-tests-supertest-jest/blob/master/config/EnvironmentVariables.js) , to change the base url edit the address in  [config.json](https://github.com/Schveitzer/api-tests-supertest-jest/blob/master/config/config.json).
