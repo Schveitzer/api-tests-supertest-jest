@@ -1,6 +1,6 @@
 # Api tests with Supertest and Jest
 
-In this project I demonstrate how to use Supertest and Jest WebDriver for Api test automation.
+In this project I demonstrate how to use Supertest and Jest for Api test automation.
 
 This project includes:
 - Framworks:
