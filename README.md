@@ -29,7 +29,7 @@ For this tests i use a local api which can be found here: [Simple jwt local api]
 ```bash
 $ yarn init:tests
 ```
- 
+![Run Img](https://i.ibb.co/FnNpfKT/Peek-28-08-2020-18-12.gif)
 ## Reports
 Run the command below to generate the test report:
 
