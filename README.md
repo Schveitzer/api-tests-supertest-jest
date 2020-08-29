@@ -23,8 +23,7 @@ Install dependencies:
 $ yarn install
 ```
 ## API
-For this tests i use a local api which can be found here:
-###[Simple jwt local api](https://github.com/Schveitzer/simple-api-jwt-server)
+For this tests i use a local api which can be found here: [Simple jwt local api](https://github.com/Schveitzer/simple-api-jwt-server)
 
 ## To run tests:
 ```bash
