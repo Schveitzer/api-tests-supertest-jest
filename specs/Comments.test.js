@@ -1,18 +1,24 @@
 import { loginHelper } from '../helpers/Login.helper';
 import { Severity } from 'jest-allure/dist/Reporter';
 import { objectHelper } from '../helpers/Object.helper';
+import { StatusCodes } from 'http-status-codes/build/es';
 
 let client;
-const url = 'comments/';
+let endPoint;
+let keysToRemove;
 
 beforeAll(async () => {
     client = await loginHelper.getClient('User 1');
+    endPoint = 'comments/';
+    keysToRemove = ['id'];
 });
 
 describe('Comments', () => {
-    it('/GET ID: 1', async () => {
+    it('/GET ID: 1 - Returns the comment with id 1 ', async () => {
         reporter.severity(Severity.Critical);
-        const response = await client.get(url + '1').expect(200);
+        const response = await client
+            .get(endPoint + '1')
+            .expect(StatusCodes.OK);
 
         expect(response.body).toStrictEqual({
             articleId: 1,
@@ -21,18 +27,18 @@ describe('Comments', () => {
         });
     });
 
-    it('/POST', async () => {
+    it('/POST - Post a new comment ', async () => {
         reporter.severity(Severity.Critical);
         const response = await client
-            .post(url)
+            .post(endPoint)
             .send({
                 body: 'Brilliant',
                 articleId: 1,
             })
-            .expect(201);
+            .expect(StatusCodes.CREATED);
 
         // Remove dinamic key id from response for comparation
-        objectHelper.removeKeys(response.body, ['id']);
+        objectHelper.removeKeys(response.body, keysToRemove);
 
         expect(response.body).toEqual({
             body: 'Brilliant',
@@ -40,12 +46,12 @@ describe('Comments', () => {
         });
     });
 
-    it('/PATCH ID: 10', async () => {
+    it('/PATCH ID: 10 - Update the comment with id 10', async () => {
         reporter.severity(Severity.Minor);
         const response = await client
-            .patch(url + '10')
+            .patch(endPoint + '10')
             .send({ body: 'Update with PATCH' })
-            .expect(200);
+            .expect(StatusCodes.OK);
 
         expect(response.body).toEqual({
             id: 10,
@@ -54,20 +60,20 @@ describe('Comments', () => {
         });
     });
 
-    it('/DELETE', async () => {
+    it('/DELETE - Register a comment and delete it', async () => {
         reporter.severity(Severity.Normal);
         const responsePost = await client
-            .post(url)
+            .post(endPoint)
             .send({
                 body: 'Brilliant',
                 articleId: 1,
             })
-            .expect(201);
+            .expect(StatusCodes.CREATED);
 
         const resquestDelete = await client.delete(
-            `${url}${responsePost.body.id}`,
+            `${endPoint}${responsePost.body.id}`,
         );
 
-        expect(resquestDelete.statusCode).toEqual(200);
+        expect(resquestDelete.statusCode).toEqual(StatusCodes.OK);
     });
 });

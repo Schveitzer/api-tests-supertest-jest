@@ -6,23 +6,22 @@ const authorizations = {};
 
 class LoginHelper {
     async getClient(userType) {
+        const user = logins[userType];
+
+        const token = await this.getToken(user);
+
         const hook = (method = 'post') => (args) =>
             supertest(nconf.get('APP_BASE_URL'))
                 [method](args)
                 .set('authorization', token);
 
-        const request = {
+        return {
             post: hook('post'),
             get: hook('get'),
             put: hook('put'),
             patch: hook('patch'),
             delete: hook('delete'),
         };
-
-        const user = logins[userType];
-
-        const token = await this.getToken(user);
-        return request;
     }
 
     async getToken(user) {
